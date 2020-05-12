@@ -1,0 +1,979 @@
+ 
+Table of Contents
+Modification History	3
+Introduction	4
+Purpose of this document	4
+Target Audience	4
+Document Classification	4
+Document Updates	4
+The xxxx Vulnerability Management Program	5
+Program Overview	5
+xxxx VM Structure	5
+Background	5
+xxxx Program Objectives	6
+Definitions	7
+xxxx Vulnerability Management Program	8
+Goals	8
+Scope	8
+xxxx Vulnerability Management Framework	9
+People – xxxx VM Program	10
+Process – Vulnerability Management Process Cycle	10
+Definition	10
+Technology – Vulnerable Information Assets	11
+Technology – xxxx VM Technology Standard:  QualysGuard	13
+QualysGuard Modules	13
+QualysGuard Architecture	13
+How QualysGuard Works	14
+Vulnerability Management Implementation	15
+VM Program Implementation Approach	15
+Phase 1: Deploy QualysGuard	15
+Initiation	16
+Planning & Analysis	16
+Design & Prepare Environment	17
+Install Appliance	17
+Discover & group assets	18
+Test & Setup VM scanning	18
+Analyze Vulnerabilities & Prepare Remediation Plan	19
+QualysGuard Best Practices	20
+Pre-Installation SFC Profile	21
+QualysGuard SFC Implementation Plan	23
+QualysGuard Physical Appliance Specifications	24
+QualysGuard Appliance - Network Requirements	24
+Disaster Recovery (DR) or Appliance Failure	25
+Recovery Procedures	25
+QualysGuard User Role Summary of privileges	26
+VM Operational Roles & Responsibilities	27
+QualysGuard User Provisioning Procedures	28
+Setting up Two –Factor Authentication	30
+xxxx xxxx VM QualysGuard Users and Structure	31
+xxxx VM Naming Conventions with QualysGuard	32
+xxxx VM Support	33
+Outages	33
+Notifications	34
+Qualys Severity Levels	35
+Vulnerabilities	35
+Potential Vulnerabilities	35
+Information Gathered	36
+Half Red / Half Yellow	36
+Phase 2:  Implement VM Cycle	37
+Vulnerability Management Phases	37
+Vulnerability Management Policies	37
+QualysGuard Vulnerability Management Lifecycle	38
+Phase 3: Implement Policy Compliance	39
+Phase 4: Implement Web App Scanning	40
+Patch Management Strategy	41
+xxxx xxxx VM Program & QualysGuard FAQ	43
+
+Modification History
+Version	Date	Name	Description of change
+1.0	05/13/2013	Myles Higa	Initial release
+			
+			
+			
+
+ 
+Introduction
+xxxx xxxx’ xxxx xxxx (xxxx) is implemented a xxxx Vulnerability Management (VM) Program to all Sales Finance Companies (SFC) worldwide.  To administer and manager a xxxx program, it will requires operating standards and guidelines to ensure uniformity, consistency, integrity, and reliability in the program.
+Purpose of this document
+This purpose of this document is to outline the standard procedures, operating guidelines, and best practices for the SFCs in support of a successful the xxxx VM program.
+This document serves as a general guide and does not intend or assume to address every situation and condition encountered in the VM operations.  Each SFC should adapt these guidelines to their internal standards and procedures documentation.
+Target Audience
+The target audiences for this document include the following:
+•	SFC Information Technology and/or Information Security Managers
+•	xxxx Regional Information Security Officers
+•	xxxx Members
+Document Classification
+This document is classified as “Confidential” for the use by xxxx xxxx associates and staff authorized by the xxxx for purposes of administering, managing, and working on the vulnerability management program.
+Document Updates
+This document shall be maintained and updated by the xxxx xxxx Vulnerability Management team members.  It is the intent to keep this document updated and current with all changes in the program.  Updated versions of the document will be published and issued to all users and managers directly associated with the xxxx xxxx Vulnerability Management program.
+ 
+xxxx Vulnerability Management Program
+Program Overview
+The xxxx Vulnerability Management (GVM) Program of xxxx Financial Service (xxxx), under the direction of the xxxx xxxx (xxxx), oversees and guides the deployment and operation of vulnerability management for all xxxx offices worldwide.  This program supports the overall xxxx objective to secure the customer and company confidential information it manages and to protect the priceless "xxxx" brand against the ever increasing and changing security threats in the world.   The GVM program achieves this by ensuring that its information assets including applications, servers, storage units, databases, network devices, and operating systems, are regularly assessed for vulnerabilities, then remediated with the appropriate patches, configured with secure settings, and/or correcting unsecured coding.
+xxxx VM Structure
+The GVM program is implemented following the xxxx corporate structure with xxxx, regional, and country levels.  There are three regions, the Americas, Asia Pacific, and Europe Africa, under the xxxx guidance.  Under the three regions, xxxx operates independent Sales Finance Companies (SFC) in 34 countries, each with its own Information Technology and/or Security resources.  
+The GVM program enables each SFC to assess and remediate its detailed vulnerabilities and regional and xxxx managers to view trends and assess risks at a broader perspective.  By deploying standard technologies, establishing uniformed functions, and implementing consistent processes at all levels, the GVM program enhances its information security program while improving overall operational efficiencies and reducing its corporate security risks.
+Vulnerability Management Implementation
+The implementation of a VM program at the SFCs xxxxly requires a methodical approach that involves planning, analysis, acquisition, communication, and coordination across many organizations internal and external to the SFC.  This document focuses upon the operationalizing of the VM program:
+ 
+
+
+PC	Policy Compliance
+PCI	Payment Card Industry (PCI)   Data Security Standard
+RISO	Regional Information Security Officer
+SFC	Sales Financial Company
+xxxxC	xxxx Financial Service Corporation
+VM	Vulnerability Management
+WAS	Web Application Scanning
+ 
+xxxx Vulnerability Management Framework
+xxxx’ xxxx VM framework encompasses the people, processes, and technologies involved in the implementation, operation, and administration of the GVM program. 
+1.	People
+a.	xxxx xxxx (xxxx)
+b.	xxxx Regional Information Security Officers (RISO)
+c.	xxxx Vulnerability Management Admins (GVM Admins)
+d.	SFC IT/IS & Vulnerability Management Team (SFC IT/IS)
+2.	Process
+a.	Vulnerability Management Cycle (VM)
+b.	Policy Compliance (PC)
+c.	Web Application Scanning (WAS)
+3.	Technology
+a.	QualysGuard Application (Service)
+b.	Information Assets
+ 
+
+ 
+Vulnerability Management Phases
+There are four phases of the VM cycle with the primary activities are described below.
+1.	Assessment Phase
+a.	Execute discovery & mapping of information assets
+b.	Classify assets by groups and tags
+c.	Validate against CMDB or asset inventory
+d.	Scan assets for vulnerabilities and policy compliance
+e.	Generate vulnerability reports
+2.	Analysis Phase 
+a.	Review, filter, and prioritize the vulnerabilities
+b.	Identify the system or application owners associated with the vulnerabilities
+c.	Issue reports to owners and have them validate the vulnerabilities
+d.	Evaluate the recommended remediation, or determine alternative controls.
+3.	Remediation Phase
+a.	Determine the tasks to remediate the vulnerability & identify resources
+b.	Prepare a plan and schedule
+c.	Test and validate the remediation in the test and/or dev environment
+d.	Implement the remediation in production.
+4.	Validation Phase
+a.	Execute the vulnerability scan on the respective system or application
+b.	Validate that the vulnerability no longer exists
+a.	Update metrics and prepare reports
+ 
+QualysGuard Navigation
+The navigation through the QualysGuard user interface starts with the login page.  Once logged in, the user can get to the authorized pages and functions using the menu bar and tabs.  It is highly recommended to get very familiar with the navigation so it becomes easy to get to the information that you are searching for.
+
+Legend:
+
+ 
+Menu Bar:
+The menu bar is where the various modules are selected.  When one module is selected the functions are displayed on tabs below the menu bar.
+ 
+Scans Functions:
+•	Scan – Create, execute, and view results of the vulnerability scans.  (Frequent)
+•	Maps – Create, execute, and view results of map scans. (Occasional) 
+•	Schedules – Create or modify scan job schedules. (Occasional)
+•	Appliances – Administer appliances. (Seldom)
+•	Option Profiles – Create or modify profiles used for scanning. (Seldom)
+•	Authentication – Create or modify authentication record used for scanning. (Seldom)
+•	Search Lists – Create or modify static or dynamic search lists used by Option Profiles and Report Templates. (Seldom)
+•	Setup – Reserved for xxxx and Regional Administrators. (Reserved)
+ 
+Reports Functions:
+•	Reports – Create, execute, and view reports.  (Frequent) 
+•	Schedules – Create or modify report job schedules. (Occasional)
+•	Templates – Create or modify report templates used by reports. (Seldom)
+•	Risk Analysis – Perform risk analysis on QID for asset groups or IP ranges.  (Seldom)
+•	Search Lists – Create or modify static or dynamic search lists used by Option Profiles and Report Templates. (Seldom)
+•	Setup – Reserved for xxxx and Regional Administrators (Reserved)
+
+ 
+Remediation Functions:
+•	Tickets – View and administer remediation tickets. (Seldom)
+•	Policies – Create and modify policies used by the remediation tickets. (Seldom)
+•	Setup – Reserved for xxxx and Regional Administrators (Reserved)
+ 
+Assets Functions:
+•	Asset Groups – Create or modify asset groups including IPs, users, and appliances. (Occasional)
+•	Host Assets – Search for host assets and view profile and vulnerabilities by IP or DNS. (Occasional)
+•	Asset Search – Search for assets by asset groups, tags, hostname, OS, QID, ports, services, and scan dates. (Frequent)
+•	Virtual Hosts – Create and administer a virtual host that hosts multiple domain names. (Seldom)
+•	Domains – Create and administer domain names. (Seldom)
+•	Applications – Search for applications discovered on assets by asset groups or IP blocks. (Occasional)
+•	Ports/Services – Search for ports & services discovered on assets by asset groups or IP blocks. (Occasional)
+•	Setup – Reserved for xxxx and Regional Administrators (Reserved)
+ 
+Knowledgebase Functions:
+•	Knowledgebase – Search for QID. (Occasional)
+•	Search Lists – Create or modify static or dynamic search lists used by Option Profiles and Report Templates. (Seldom)
+•	iDefense Intelligence – Not used
+ 
+Users Functions:
+•	Users – Create and maintain user profiles, roles, asset groups, and permissions. (Unit Managers or higher only)
+•	Business Units – Create and maintain business units profiles, asset groups, and users. (Unit Managers or higher only)
+•	Activity Logs – View all activities on the VM module. (Unit Managers or higher only)
+•	Setup – Reserved for xxxx and Regional Administrators (Reserved)
+ 
+
+ 
+QualysGuard Naming Conventions
+To ensure that all objects are xxxxly identifiable in QualysGuard, every user is responsible for properly naming the objects that they create.  Although each user may on see only their objects related to their SFC or Business Unit, the xxxx and regional administrators sees all objects.  Therefore, these objects need to be distinguishable by its names.
+There are primary rule of naming conventions is to prefix the object with the SFC acronym followed by an underscore, and followed by a specific description of the contents.  It is not necessary to identify the QualysGuard object type as they are only visible within their respective lists.
+Overall, here are the naming conventions:
+QualysGuard type	Naming Convention	Examples
+xxxx objects  including
+•	Option profiles
+•	Report Templates
+•	Search Lists	xxxx_<description>	xxxx_Technical_Report, xxxx_Authentication_Scan
+Users
+(Named by the system)	xxxx_<first&last initials><count>	
+Business unit	<SFC acronym>	TFA, TSV, xxxxES, etc.
+Asset Groups (All IPs)	<SFC acronym>_<country>	xxxx_UnitedStates, xxxxC_Japan
+Sub-Asset Groups	<SFC acronym>_<hosts description>	xxxx_windows_servers, xxxxC_workstations
+Scans (Vuln & Map scans)	<SFC acronym>_<hosts description>	
+Scan Schedules	<SFC acronym>_<host-schedule description>	
+Reports & Report Templates	<SFC acronym>_<report description>	
+Report Schedules	<SFC acronym>_<host-schedule description>	
+Search Lists	<SFC acronym>_<search description>	
+Appliances	<SFC acronym>_<location/host name/description>	
+Authentication Record	<SFC acronym>_<hosts description>	xxxxES_Windows, TMFCN_Unix
+
+ 
+Operationalize the VM Cycle Using QualysGuard
+Overall, QualysGuard is rather quick to start up due to its cloud architecture.  The deployment of QualysGuard essentially involves the steps as outlined below.
+
+ 
+SFC Setup (Regional ISO)
+The Regional ISO or xxxx Admin team works with the SFC to setup the configuration for the SFC.  The following are setup in Qualys:
+Qualys Action	Description
+Setup User Account	A User account is created for the primary user for the SFC.  This user will be the assigned the primary Unit Manager role.
+Other users can also be setup at this time.
+Setup Business Unit	A Business Unit is created for every SFC.  All users, unit managers, and asset groups are attached to the business unit.
+Assign Unit Manager(s)	The primary user account above is assigned as a Unit Manager for the Business unit.  The Unit Manager has the ability to manage the users, asset groups, and appliances in the Business Unit.
+Other users can be assigned the Unit Manager role, or can be assigned as Scanners or Readers.
+Setup Asset Group
+(All IP ranges for SFC)	The initial Asset Group created contains all IP ranges used in the SFCs network.  The Unit Manager and the Appliance is assigned to the Asset Group.
+
+Qualys Objects of SFC
+1.	The following is a diagram of the Qualys objects as it relates to the SFC.
+2.	This diagram helps to understand the relationships between the Business Unit, Unit Manager, Asset Groups, and Appliances.
+
+
+
+
+
+
+Appliance Setup (Regional ISO & SFC IT Manager)
+1.	Refer to the “xxxx xxxx VM Program - Qualys Implementation & SOP Guide” and the Qualys reference manuals for specific installation steps.
+2.	The installation and configuration of the appliance is coordinated between the Regional Manager and the SFC IT Manager.
+a.	Physical appliance
+i.	Rack, connect, and power up the appliance.
+ii.	The appliance should have been pre-configured by Qualys prior to shipping.  If not, follow the instructions to input the configuration from the appliances console.
+iii.	Once connection is made with the Qualys SOC, the appliance will appear as connected on the Appliance tab.
+b.	Virtual appliance
+i.	In QualysGuard, provision the scanner & obtain personalization code
+ii.	Download the virtual scanner image, approx. 250 MB
+iii.	Note: For VMware / vSphere, be sure to download the correct version.  Also, IP Pools must be enabled.
+iv.	Install the image – provision into the virtualization platform; install a standard OVA image
+v.	Enter network configuration info
+vi.	Enter the personalization code generated from the UI
+vii.	View the Console for the virtual scanner and verify network settings
+3.	Appliances are assigned to a Business Unit based upon its assignment to an Asset Group.  See relation diagram above.
+Navigation:
+ 
+Scanner Appliance Record:
+1.	Notification – alerts can be triggered if the appliance’s heartbeat is missed.  It is recommended to have this turned on to alert after  5 heartbeats missed or 20 hours of not checking in.
+Field	Entry
+Scanner Appliance	Appliances should be named with the SFC acronym as the prefix.  After the prefix and underscore, use the assigned host name, location, or other descriptors to easily identify the appliance.  For example:
+•	xxxx_XPPAPL0015
+•	BTB_Switches
+Polling Interval	By default, appliances are set to poll the Qualys SOC every 180 seconds or 3 minutes for any scan job requests or system updates
+Notification	Alerts can be triggered if the appliance’s heartbeat is missed.  It is recommended to have this turned on to alert after  5 heartbeats missed or 20 hours of not checking in.
+
+
+ 
+Asset Discovery – Running Map Scans
+Guidelines
+1.	Before running a full vulnerability scan, it is recommended to run a Map Scan to discover all devices on the network. 
+2.	Map scans provide full information on your domains (DNS records, topology) and identifies all active hosts located in your Internet/Intranet perimeter.
+a.	Port scan – TCP and UDP ports
+b.	Service identification
+c.	Fingerprinting of hosts – OS, DNS, NetBIOS
+3.	Once the map scan is complete, check if expected IPs were discovered and if hosts were fingerprinted.  If questions arise, 
+a.	Verify scan parameters (asset groups, IPs, or domain).
+b.	Verify that the scanner is cleared through all firewalls.
+4.	Map scan reports are not required but can be scheduled to run on a regular basis.  It provides a quick way to get a Network diagram and list of the all assets within the asset group.
+Navigation:
+ 
+Map Scan Record:
+Field	Entry
+Title	Name the map scan using the SFC acronym as the prefix
+Option Profile	Light Map Scan v.1
+Scanner Appliance	SFC locally installed scanner e.g. xxxxES_Spain
+Asset Group	Use the primary Asset Group which contains all IP ranges
+Domain (checkbox)	Uncheck
+IP (checkbox)	Check
+Domain / Netblocks	If Asset Group not established, then input the IP range
+
+ 
+Map Scan Report:
+Using the Map report, there are a number of functions that you can perform.  
+Select the host(s) and then select the function from the drop down list.
+ 
+ 
+
+ 
+Setting up Asset Groups
+Guidelines
+1.	The primary Asset Group contains all IP ranges for the SFC which is created by the Regional ISO or xxxx VM Admin.
+2.	Unit Managers are allowed to setup additional Asset Groups (sub-asset groups) within the scope of the IPs in their network.
+3.	Sub Asset Groups can used to group hosts by a variety of ways including:
+a.	Environment – DEV, Test, Stage, Prod, etc.
+b.	Operating system – Windows, Solaris, Red Hat, Printers, Cisco, etc.
+c.	Location – East, West, Central
+d.	Risk levels – Internet facing, database, mission critical apps, etc.
+e.	Critical – Internet facing servers 
+i.	High – Servers running mission critical applications such as Point of Sale, Contract Management or accounting systems
+ii.	Standard – Servers running other systems such as Intranet or non-production and test systems
+iii.	Client – Corporate laptop and desktop PCs
+iv.	Unknown – Hosts that have not been classified into one of the other profile groups 
+4.	Assign the users in the same Business Unit who are allowed access to the Asset Group.
+5.	Assign the Scanner Appliance for the SFC.
+Navigation:
+ 
+Asset Group Record:
+Field	Entry description
+Title	All Asset Groups should be named with the SFC acronym as the prefix, for example:
+xxxx_TCX_Datacenter
+BTB_Switches
+IP	Select the IP ranges to be assigned to the asset group.  If the IP range you are looking for does not exist, check with the Regional ISO to update the primary Asset Group for the SFC.
+DNS	No entry required.
+NetBIOS	No entry required.
+Domains	This is not required but can be selected from the available domains. (Optional)
+Users	No entry required.  This is 
+Scanner Appliances	Select the scanner appliance corresponding to the SFC.
+Business/CVSS Info	Not used at this time.
+Comments	Update as desired.
+
+   
+
+ 
+ 
+Setting up Authentication Records
+Guidelines
+1.	Authenticated scans are required to get more reliable and extensive vulnerability scans. 
+2.	Separate service accounts specifically for scanning should be created including a Windows domain administrator account and a Unix/Linux group wide administrator account that can be used across all the servers and clients in the local SFC site.  
+3.	With the appropriate privilege level, the service account can read the registry and configuration to determine the software version installed and if it is configured securely.
+4.	Each IP can be associated with only one Authentication records.  If an IP within a range has a different authentication, then a separate authentication record must be created.
+5.	Create the Authentication record for each operating system to be scanned.
+6.	Always validate the authentication records by running test scans against a few hosts.
+Navigation:
+ 
+Authentication Record: 
+Field	Entry description
+Title	Name the Authentication Record using the SFC acronym as the prefix. For example:
+xxxx_Windows_Server
+BTB_DEV_Servers
+Login Credentials	Windows Authentication:
+Domain type:  Select “NetBIOS, User-Selected IPs” from the drop down list
+Domain name:  Enter domain name
+Login:
+Select “Basic authentication” unless the credentials can be obtained from an Authentication Valut
+User Name and Password: Enter credential
+NTLM:  Uncheck
+IPs	Select the IPs that are applicable from the list, or Manually enter the IPs
+Comments	Update as desired.
+ 
+Windows Authentication Record
+   
+
+ 
+Running and validating the VM scan
+Guidelines
+1.	Once asset groups and authentication records are created, it is necessary to execute test scans on the various types of assets including Windows servers and workstations, Unix/Solaris/RedHat/Linux servers, etc.
+2.	The scan should use the standard Option Profile named:  “xxxx Authenticated Scans v.1 (default)” created by the xxxx.
+a.	This option profile requires an authenticated record for hosts and will report all vulnerabilities including Confirmed, Potential, and Information Only.
+3.	Inspect the vulnerability scan results report for the following:
+a.	Verify the number of hosts scanned.
+b.	Verify that all hosts were authenticated.
+c.	Take note of the scan duration to ensure that there is adequate time to complete that scan within the scan time window.
+4.	It is not recommended to use the vulnerability scan report for remediation planning.
+a.	This scan report contains the results for only those assets scanned.  It does not include all other assets in the enterprise not included in the scan.
+b.	This scan report contains ALL vulnerabilities including Confirmed, Potential, and Information Only vulnerabilities.  The remediation planning and prioritization should focus on the Confirmed Severity Levels 2 through 5.
+c.	For remediation planning, run the report from the Reports module using the recommended xxxx template, xxxx Technical Report.
+5.	Once the test scans are successful, then setup the enterprise scans.
+a.	It is recommended to scan the servers and network devices separate from the workstations.
+b.	SFCs can setup a broad scan which covers most of their assets, or they can setup separate scans for asset group types.
+c.	Test and validate the results of the enterprise scans.
+d.	Evaluate and track the length of time for each scan.
+e.	Based on the timing, determine the appropriate window to schedule the scans.
+6.	Setup the scans on the Qualys scheduler to run on a monthly or quarterly basis.  See Scheduled Scans section.
+Qualys Scanning Objects
+1.	The diagram below displays all the Qualys objects associated with a VM scan.  Since scanning is the primary operation, all users should understand these objects as best as possible.
+2.	Each scan requires the following:
+a.	Assets – Asset groups, IP Addresses, and/or Asset Tags
+b.	Option Profile – Scan preferences, Authentication
+c.	Authentication Record
+d.	Scanner Appliance
+ 
+Navigation:
+ 
+Launching the Vulnerability Scan:
+Field	Entry description
+Title	Name the Vulnerability Scan using the SFC acronym as the prefix. For example:
+xxxx_Windows_Server_Scan
+BTB_DEV_Server_Scanh
+Option Profile	Select the “xxxx Authenticated Scans v.1 (default)”
+Scanner Appliance	Select the local scanner.  The scan will be placed on the scan queue waiting for communication with the local scanner appliance.  (Note: the appliance is setup to check with the Qualys SOC every three minutes, 180 seconds
+Choose Target Hosts	Select “Assets” radio button, then select the appropriate Asset Groups.
+Select “Tags” radio button, then select the desired Tags
+
+
+ 
+Monitor the Vulnerability Scan:
+1.	Go to the Scans tab to view its status.  The status will change from Queued to Running to Complete.
+ 
+2.	Once complete, View or download the report by clicking on the down arrow appearing when the mouse hovers over the scan title.  The report can be downloaded in various formats as depicted.
+  
+
+Validate VM Scan Results
+Guidelines
+1.	Upon completion, display the vulnerability scan report and review that the scan was successful by validating the following:
+a.	Verify the number of hosts scanned.
+b.	Take note of the scan duration.
+c.	Verify that all hosts were authenticated.
+ 
+i.	If all hosts were not authenticated, then verify the credentials and IP range on the Authentication Record. 
+ii.	If some hosts were not authenticated, then troubleshoot the following:
+1.	Verify that those hosts have the same credentials
+2.	Look deeper into the Information Gathered section for a host which failed authentication.
+3.	Common QIDs to look for: 
+QID	Authentication Method
+38307	Unix Authentication Method
+70028	Windows Authentication Method
+	
+QID	Authentication Failed
+105015	Windows Authentication Failed
+105053	Unix Authentication Failed
+105441	VMware Authentication Failed
+
+d.	Note that if an IP does not have an Authentication Record, then it will not be reported as unauthenticated.  You will need to search for the following QIDs on the report.
+QID	Authentication Not attempted
+105296	Windows Authentication not attempted
+105297	Unix Authentication not attempted
+
+e.	Scan through the reported vulnerabilities focusing on the Confirmed, Severity level 2 through 5.
+ 
+2.	Every time a scan is run on a host, new vulnerabilities are reported as “New” and prior vulnerabilities that still exist are reported as “Active”.  This helps to determine when the vulnerability was first discovered.
+3.	At this point, you can either work with the scan results to begin your analysis and remediation or wait for all scans to run for the month before preparing your reports for remediation.
+
+
+Scheduled Scans
+1.	All SFCs are required to perform enterprise scans scheduled at a minimum of every quarter, per xxxx standards.
+2.	However, it is strongly recommended that monthly scans be scheduled for SFCs using Qualys.  The reason would be that since new vulnerabilities are identified and existing ones remediated by patching on a monthly basis, monthly reports can reflect a more granular trend of the vulnerability tracking.
+3.	Every time a scan is run on a host, new vulnerabilities are reported as “New” and prior vulnerabilities that still exist are reported as “Active”.  This helps to determine when the vulnerability was first discovered.
+4.	All scheduled scans should be first tested using the Scan module. Validate that all intended targeted hosts are scanned and record the duration of the scan.  This is used to determine how much of a window is needed for the scheduled scan.
+5.	Once tested, then the scan parameters can be used to create the scheduled scan.
+6.	The scheduled date and time should be agreed to by IT operations and business application teams to ensure the scans do not impact their processes.
+a.	Although the impact is minimal, it is highly recommended to run the scan of the servers during the weekends and/or evenings.
+b.	For workstations, the impact is very low and the requirement to have the machine turned on leads to scheduling the scans during the workday.  Again, this should be tested a few times before the scans are scheduled.
+7.	Enterprise scans can be created and scheduled in smaller groups.  It may not be feasible or preferable to scan everything is one job.  Scans can be broken down to smaller scans of different asset groups scheduled at different nights or weekends.
+8.	Overall, scans should be scheduled so there is no or minimal potential impact to any application or user.  If any scan impacts an application, it should be paused or stopped and rescheduled.
+9.	Each SFC should work with their IT team to determine the best schedule for scanning.
+Scheduled Vulnerability Scan Record:
+Field	Entry description
+Title	All scheduled scans should be named with the SFC acronym as the prefix, for example:
+xxxx_TCX_Datacenter
+TCFA_Windows_Scan
+Option Profile	Select the xxxx Authenticated Scan profile.
+Scanner Appliance	Select the scanner that is local to the server to be scanned.  Usually there is only one scanner for the SFC, however, if there are multiple, be sure to select the local or closest scanner to the target hosts.
+Target Hosts	Select the Asset Groups, IP ranges, or Asset Tags.  You can also exclude IPs/Ranges from the scheduled scan if necessary.
+Scheduled	Set the following fields:
+Start:  Planned start date and time.
+Duration:  If scan exceeds the planned duration, you can Pause or Cancel the job.
+Resume: If Paused, the select the number of days to wait or set it to be manually resumed.
+Occur: Daily, Weekly or Monthly (xxxx recommends monthly scanning)
+Set the parameters for the occurrences as noted.
+Notifications	Check if you want to be notified when the scan starts.
+Enter the email addresses to be notified.
+Deactivation	Check if you plan to deactivate or put a hold on the scheduled scan.  It will keep the original parameters. 
+Uncheck if you want to re-activate the scheduled scan.
+
+ 
+
+ 
+ 
+
+ 
+
+•	Reports
+•	Report templates
+•	Scheduled reports
+•	Report download & distribution
+•	Analysis & prioritization
+•	Review vulnerabilities with owners
+•	Prioritization
+•	Tracking
+•	Remediation
+•	Establish remediation plans
+•	Patch updates
+•	Non-patch remediation
+•	Tracking
+
+Running Reports and Scheduling Reports
+QualysGuard provides flexible, comprehensive reporting capabilities with functionality for filtering and grouping security assessment data in your account. Pre-defined report templates are provided so that you can easily run reports right away. These include the high level Executive Report or very detailed Technical Report for remediation purposes.
+Report Templates
+1.	There are a number of xxxx report templates created by xxxx which provide all the necessary information to track and remediate vulnerabilities.
+2.	Each SFC can these report templates or create templates for their specific purposes.
+ 
+3.	The intent of providing the xxxx report templates are to standardize any regional or xxxx reporting and also to provide useful reports for analysis and remediation of the vulnerabilities.
+4.	The xxxx Technical Report template is includes only the Confirmed Severity 2 through Severity 5 vulnerabilities, and filters out all Potential, Informational, and Confirmed Severity 1 Vulnerabilities.  It also excludes QIDs that are not considered critical vulnerabilities by the xxxx based upon current practices and controls.
+Running a report
+Typical reports used will be template based utilizing the report templates described in the previous section. 
+
+ 
+
+From the “New Scan Report” pop-up window you can select the report template to use and the format of the document e.g. CSV. The report can also focus on individual host using the IP/Ranges box or defined Asset Groups. 
+
+ 
+
+Scheduled reports
+xxxx have scheduled a number of report tasks for each SFCs using the defined templates. These tasks will run every 3 months just after the quarterly scans of the SFC networks. The purposes of these scheduled reports are to track remediation progress and identify any new vulnerability since the last quarterly scan. The scheduled reports include 
+
+a)	xxxx Technical Report
+
+This scheduled report using the corresponding template filters out client and unknown hosts as the focus is on server vulnerabilities. This report is generated as an excel document so data can be easily sorted due to the extensive amount of information. This report is expected to provide the most use for local IT administrators in tracking and remediating vulnerabilities per host.
+
+b)	EAR Vulnerabilities (Summary)
+
+This scheduled report using the corresponding template is formatted in pdf. This report is expected to provide local IT administrator an overview of which hosts will require the most attention.
+
+c)	EAR Vulnerabilities per Host Profile
+
+These 5 scheduled reports using the corresponding template are produced in pdf view. Depending on what host asset group the specific report is focused on, all host from other asset groups are filtered out.
+
+These reports are expected to help local IT administrators prioritise which hosts and what vulnerabilities to remediate first. For example, the vulnerability report for the Critical Server Profile will have the highest priority.
+
+The report for Unknown Host is also expected to help local IT administrators identify the IP addresses that have not been put in a specific host asset group and investigate the reason for this.
+
+d)	EAR Vulnerabilities per Host Profile (Summary)
+
+These 5 scheduled reports are expected to help EAR IT track remediation progress for each of the SFCs. Depending on what host asset group the specific report is focused on, all host from other asset groups are filtered out.
+Report download and distribution
+Manual download
+
+Once scheduled reports have been generated there are a number of ways they can be retrieved. The standard method that is expected of each SFC is to log into the Qualys portal and manually download the report. See below screenshot on how to download a specific report which is located under the Reports tab:
+
+ 
+
+Download via URL link and attached in an email
+
+Reports can also be downloaded via a link sent in an email notification (for when a scheduled report has completed) eliminating the need to login to the Qualys portal. This method is intended to be used by non-technical personnel only and its use should be limited for security reasons. This report distribution method is configured under the scheduled report options along with other security options to restrict who can view and download the reports. For pdf reports less down 5MB in size, these can be attached to the email notification.
+
+The screenshot below shows the option to encrypt to report so that only people with the password can view the pdf report.
+
+ 
+
+The screenshot below shows the option to distribute an email for when the report has completed and password protect the URL link to download the report. There is also the option to limit the number of times a report can be downloaded.
+
+ 
+
+Currently, only the “EAR Vulnerabilities per Host Profile (Summary)” scheduled reports will be configured to send an email URL link/attachment to EAR admin staff for high-level reporting. The names of staff receiving the email are recorded in appendix A for auditing purposes.
+Set up User Accounts (Unit Manager)
+Guidelines
+1.	Unit Managers may create additional user accounts in the same Business Unit.
+a.	Unit Managers may create other Unit Managers, Scanners, and Reader accounts.
+b.	Assign the users the Asset Groups only as needed.
+c.	Update the Permissions as noted on the table below.
+2.	Users are sent an email with their user id and password.
+3.	The password rules include:
+a.	Required to change their password every three months (90 days).
+b.	Lock account after 5 failed login attempts
+c.	Minimum length of password is 8 characters.
+d.	Must contain alpha and numeric characters.
+4.	By default, all users are setup with the VeriSign Identity Protection (VIP) two-factor authentication.  Users must download and install the VIP soft token and install it on the workstation or mobile device.  The software will generate a temporary key used during the login process.
+5.	After the user logs in, remind them to update their contact information and verify, including their title, phone, email and address.
+6.	Access control and attestation processes should be implemented to ensure that all users are authorized to access the information.
+Navigation:
+ 
+User Record Notes:
+1.	General Information:  Complete as much information as possible for each user.
+2.	User Roles
+a.	Assign the user role that is appropriate to their function.
+b.	Unit Managers are able to see all the asset groups and scans within the business unit.
+c.	Scanners and readers will see only the scan jobs based on the asset groups they are authorized to see.
+3.	Asset Groups:
+a.	For Unit managers, assign all Asset Groups associated with the Business Unit.
+b.	For Scanners or Readers, assign only the Asset Groups that they need to see.
+4.	Permissions:
+a.	Permissions are granted based on the role.
+b.	Unit Managers have asset 
+ 
+Permissions & Notifications
+Unit Manager	 
+Scanner	 
+Notifications Options	 
+
+ 
+1.	Remediation
+Interpreting Qualys Reports
+Qualys scan results and reports uses a number of key terms to assess the security risks associated with each scanned hosts. 
+
+a)	Qualys severity levels (1 to 5) - By default every vulnerability in the Knowledgebase is assigned a severity level, which is determined by the security impact and likelihood/ease of the exploitation. 
+b)	Vulnerabilities - The term refers to design flaws or is-configuration detected by the Qualys scan that makes the host or network susceptible to malicious attacks from local or remote users.
+c)	Potential Vulnerabilities - The term refers to vulnerabilities that cannot be fully verified by the Qualys scan but at least one necessary condition for the vulnerability is detected. 
+d)	Information Gathered – The term refers to useful and/or sensitive information obtained from the Qualys scan that may assist an attacker.   
+
+Please refer to the document “xxxx xxxx VM Program - Qualys Implementation and SOP Guide v1.pdf” on page 30-31 for further details on the above terms.
+Prioritisation
+Using the scheduled reports, it is expected that each SFCs will create their own remediation plan to fit in with their existing operational duties. EAR IT has defined a prioritisation list to assist SFCs with their remediation tasks and determine what order hosts and/or vulnerabilities should be addressed first. 
+
+High Priority Vulnerability Task List: 
+
+a)	Level 5 (Urgent) to 3 (Serious) Confirmed Vulnerabilities and Level 5 Potential Vulnerabilities for hosts in the Critical Server asset group. 
+b)	Level 5 (Urgent) to 4 (Critical) Confirmed Vulnerabilities for hosts in the High Server asset group
+c)	Level 5 (Urgent) Confirmed Vulnerabilities for hosts in the Standard Server asset group
+d)	Level 5 (Urgent) Confirmed Vulnerabilities for hosts in the Unknown Host  asset group
+e)	Level 5 (Urgent) Confirmed Vulnerabilities for hosts in the Client asset group
+
+Low Priority Vulnerability Task List: 
+
+f)	All other confirmed vulnerabilities for hosts in the Critical Server asset group
+g)	All other confirmed vulnerabilities for hosts in the High Server asset group
+h)	All other confirmed vulnerabilities for hosts in the Standard Server asset group
+i)	All other confirmed vulnerabilities for hosts in the Unknown Host  asset group
+j)	All other confirmed vulnerabilities for hosts in the Client asset group
+
+The table below also highlights the high priority vulnerability tasks (a) to (e):
+
+Vulnerability Severity	Servers
+ 	PCs
+	Internet Facing	High Profile	Standard and Profiles	Unknown Host Profiles	Laptops	Desktops
+Urgent	 	 	 	 	 	 
+Critical	 	 	 		 	 	 
+Serious	 	 	 		 	 	 
+Medium	 	 	 		 	 	 
+Minimal	 	 	 		 	 	 
+
+Potential Vulnerability Severity	Servers
+ 	PCs
+	Internet Facing	High Profile	Standard and Profiles	Unknown Host Profiles	Laptops	Desktops
+Urgent	 	 	 	 	 	 
+Critical	 	 	 		 	 	 
+Serious	 	 	 		 	 	 
+Medium	 	 	 		 	 	 
+Minimal	 	 	 		 	 	 
+
+Tracking remediation activities
+The quarterly scheduled scan reports will be used to monitor how the total numbers of high vulnerability tasks are being resolved over time for each SFC. This can help each SFC determine if their remediation plan will need to be refined to keep on top of the new vulnerabilities that are continually being discovered.
+
+The graph below shows an example of how vulnerabilities under the High Priority Vulnerability Task List are resolved over a course of a year:
+
+
+
+ 
+ 
+Patch Management Strategy
+
+Overview
+ The overall patch management strategy needs to encompass all software products found across any enterprise. Although xxxx has processes in place for a majority of operating system level patches, the scope needs to be increased to include any and all vulnerable software applications in our environment. This must include all software components that require ongoing patching to maintain an appropriate level of security. 
+ Such a change in culture is difficult to achieve as the substantial impact to roles and responsibilities will expand into many various departments, and deep into areas of both companies - xxxx and TMS alike. 
+Once everyone is onboard and knows the expected requirements of xxxx as a whole, the Information Security team can drive the efforts with all parties involved to refine current process and procedures where needed, and even define new processes and owners in the cases where there have never been historically. 
+The remainder of this document highlights the high level risk based approach the security team can then follow once the stakeholders in enterprise are aware of the need and requirement to address many problem areas where substantial risk lies within the xxxx network.
+Identifying Platforms, Roles, and Responsibilities
+Key Consideration: Define owners for all specific patching areas
+•	Operating systems platforms and versions
+•	Applications and middle ware (Java, .NET, Apache, etc.)
+•	Databases
+•	Virtual systems
+•	Servers
+•	Workstations and Laptops
+•	Networking equipment
+•	Printers
+We need to clearly define accountability for all areas as well as persons responsible for the various tasks involved in the process. The success of the program depends on the dedicated involvement from all the teams assigned to their respective roles.
+Deliverables: 
+•	Remediation owner points of contact document
+•	Prioritized approach based on level of risk and number of vulnerabilities by remediation owner
+Setting Expectations and Goals
+Key Consideration: Efficient ongoing processes to maintain compliance
+Determine the desired future state of the process internally with Information Security management (CISO and Compliance) involvement:
+•	Monitoring of security bulletins for security updates as they are released
+•	Notification to invoke the remediation process
+•	Scheduling the implementations adhering to Change Management practices
+•	Sub production deployments for proper testing prior to production 
+•	Production deployments for remediation
+•	Validation of deployments to re-assess the security posture
+•	Compliance requirements and baselines
+•	Reporting metrics
+Deliverables: 
+•	Security patch communication template
+•	Metrics and Reporting templates (Compliance and Vulnerability Management)
+Building Remediation Owners 
+Key Consideration: Root Cause Analysis and Solutions
+Meeting with owners based on prioritized approach to:
+•	• Review existing procedures
+•	• Validation of vulnerability assessment findings with systems owners
+•	• Identifying the gaps, root causes, concerns, obstacles
+•	• Develop ongoing procedures to remediate on a timely ongoing basis
+A schedule for all areas must be defined for which these repeatable tasks can be performed on an ongoing basis.
+Technologies or software solutions must be in place to support the distribution of the required updates in an efficient manner.
+An auditable systematic timely process needs to be defined and documented working with the various remediation owners to maintain compliance and mitigate risk in a timely manner.
+Accountability for the level of risk should fall upon system and application owners to ensure Security requirements are met.
+Deliverables: 
+•	Procedure document (with roles and responsibilities, frequency, etc.) by department
+•	Calendar schedule of deployments
+
+ 
+QualysGuard User Role Summary of privileges
+Q-Role	xxxx GVM Role	QualysGuard Privileges
+Manager	xxxx VM Leads,
+RISO	- Most privileged user role with Access to all assets
+		- Discovery (maps), security auditing (scans), reporting, remediation
+		- Manage assets and users
+		- Set subscription policies and xxxx configurations
+		- Typical users: Chief Security Officer, Security Manager
+Auditor 	Not used	-This role is available when the policy compliance module is enabled
+		- Manage policies, exception requests, and compliance reporting
+		- Access to all compliance hosts in the subscription
+		- Typical users: Security Auditor, Third Party Consultant
+Unit Manager 	SFC IT/IS Manager, 
+SFC IT/IS VM Lead	- Discovery (maps), security auditing (scans), reporting, remediation
+		- Access to asset groups in assigned business unit
+		- Manage assets and users in assigned business unit
+		- Typical users: Division Manager, Regional ISO
+Scanner 	IT Operations	- Discovery (maps), security auditing (scans), reporting, remediation
+		- Access to asset groups in the user’s account
+		- Typical users: Security Engineer, IT Administrator, Inside Consultant
+Reader 	System Owners, Network Ops, Config Mgmt
+(As needed)	- Reporting and remediation only
+		- Access to asset groups in the user’s account
+		- Typical users: Executive, Outside Consultant, Auditor, IT Assistant
+Contact 	All others	- No Access to the QualysGuard user interface
+		- Receive summary email notifications for scans and maps
+		- Access to asset groups in the user’s account
+		- Typical users: Monitoring or tracking device, Auditor, Alert
+
+ 
+ 
+User Roles Comparison (Vulnerability Management)
+The following table provides a comparison of privileges granted to user roles for vulnerability management.
+A filled circle ( ) indicates that the privilege is granted to the user role, and an open circle (o) indicates that the privilege may be assigned by a Manager user.
+Manager privileges apply to all user configurations (such as asset groups, option profiles, schedules, and saved results), regardless of who created them. Unit Manager privileges apply to user configurations created within their respective business units. Scanner and Reader privileges apply to personal configurations only. 
+Privileges	Manager	Unit Manager	Scanner	Reader
+Account Setup
+Configure your dashboard	 	 	 	 
+Change your Home page	 	 	 	 
+Change your password	 	 	 	 
+Reporting
+Run reports	 	 	 	 
+Manage report templates	 	 	 	 
+Ignore vulnerabilities	 	 	o 	o 
+Purge host information	 	o 	o 	o 
+Remediation
+Manually create tickets	 	 	 	 
+Edit tickets	 	 	 	 
+Close/ignore tickets	 	 	o 	o 
+Delete tickets	 	 	o 	o 
+Manage remediation policy	 	o 	 	 
+Scanner Appliances
+Install scanner appliances	 	 	 	 
+Edit scanner appliances	 	 	 	 
+Network Mapping & Vulnerability Scanning
+View map and scan history	 	 	 	 
+Launch maps and scans	 	 	 	 
+Schedule maps and scans	 	 	 	 
+Cancel maps and scans	 	 	 	 
+Pause/resume scans	 	 	 	 
+Setup storage options to auto delete results	 	 	 	 
+General Management
+Manage search lists	 	 	 	 
+Manage asset groups	 	 	 	 
+Manage option profiles	 	o 	o 	 
+Distribute xxxx option profiles and templates	 	o 	 	 
+Manage user accounts	 	 	 	 
+Manage authentication records	 	o 	 	 
+Add and edit host assets	 	o 	 	 
+Add and edit domain assets	 	o 	 	 
+Manage business units	 	 	 	 
+Subscription Setup
+Edit xxxx excluded hosts list	 	 	 	 
+Set xxxx user permissions	 	 	 	 
+Setup business units - enable the new IP limit feature	 	 	 	 
+Setup business risk	 	 	 	 
+Setup security risk	 	 	 	 
+Define host attribute names	 	 	 	 
+Setup CVSS	 	 	 	 
+Set account and password security options	 	 	 	 
+Set remediation transition options	 	 	 	 
+Set the primary contact for the subscription	 	 	 	 
+KnowledgeBase
+Edit vulnerabilities - severity and content	 	 	 	 
+Add OVAL vulnerabilities	 	 	 	 
+Disable vulnerabilities	 	 	 	 
+  
+VM Operational Roles & Responsibilities 
+xxxx GVM Role	Responsibilities	Q-Role
+xxxx	•	Oversee and direct the xxxx VM program of xxxx
+•	Establish xxxx VM policies
+•	Establish standards and expectations for scanning, reporting, and remediation
+•	Report to ERC, GITSC, and MC on xxxx VM program	none
+xxxx Regional ISO	•	Add or remove SFC unit managers
+•	Add or remove business units in the region
+•	Implement xxxx and regional standards
+•	Generate regional and xxxx reports and metrics	Manager
+xxxx VM Lead	•	Oversee subscription and agreement with Qualys
+•	Add or remove SFC unit managers
+•	Add or remove business units in the region
+•	Implement xxxx and regional standards
+•	Generate regional and xxxx reports and metrics	Manager
+SFC IT/IS Manager	•	Accountable for the Vulnerability Management Program.
+•	Provides monthly vulnerability reports and metrics.
+•	Maintain remediation plans by owners.
+•	Manage exceptions.
+•	Authorizes users in QualysGuard.	Unit Manager
+SFC VM Lead	•	Add and maintain hosts and network IP ranges.
+•	Add or remove users under the SFC.
+•	Create and maintain asset groups and asset tags.
+•	Create and maintain VM configurations for SFC scans.
+•	Create and maintain VM configurations for new environment build scans.
+•	Work with operations to schedule and execute security patches.
+•	Work with operations to setup process on scanning & patching for new environment builds.
+•	Perform analysis on the VM scan reports.
+•	Identify owners of the vulnerabilities and issue reports.
+•	Meet with owners and create a remediation plan with a timeline.
+•	Rescan systems to validate remediation.
+•	Create analysis reports and metrics.	Unit Manager
+Data Center Operations	•	Apply patches on a monthly basis.
+•	Maintains operating system patches in all computing environments sufficient to enable application of security patches without major version upgrades. 	Scanner
+Configuration Management	•	Maintain complete list of information assets and configuration Item (CI) on the network.
+•	Reconcile asset list to discovery reports.
+•	Identify unknown host to security.	Reader (If necessary)
+Network Operations Manager	•	Provide network guidance and support for setting up scanner appliance.	Reader (If necessary)
+
+QualysGuard User Provisioning Procedures
+The manager and unit manager roles have the privilege of administering users.  Managers have the ability to add, update, or remove all users on the system, while the Unit Managers only can administer users within the business unit or SFC.
+User administrators are responsible for adding users as well as removing users based upon the role and employment status of the user.  Here are some general rules:
+1)	The least privilege rule should apply when provisioning the user access.
+2)	Anytime a user is transferred to a different group, or changes his/her role, the access should be modified or removed.
+3)	If a user is terminated, the user should be removed and access deactivated from QualysGuard.
+4)	The user access list should be reviewed at least quarterly.  Records of the account access review should be kept for at least one year.
+Adding a QualysGuard User:
+1)	Determine the user’s operational role and Qualys role.
+2)	Access the VM/Users/Users tab.
+3)	Select New to create the user with all information including email, position, and address.
+a)	General Information - Complete all required information including name, title, phone, email, and address.
+b)	User Role
+i)	Assign the User role according to the required privileges.
+ii)	Assign the right Business Unit for the SFC.
+c)	Asset Group – Select the asset group in the SFC that the user needs access for scanning or reporting.
+d)	Permissions – Select the appropriate permissions for the roles.
+e)	Options – Select the notifications required.  Note for other notifications from Qualys, go to the Qualys Community site: https://community.qualys.com/community/notifications-us.
+4)	Provide the user with the procedures to download and install the VeriSign Identify Protection two-factor authentication soft-token.
+Removing a User:
+1)	To remove a user permanently, go to VM/Users/Users tab.
+a)	Checkmark the users to be deleted.
+b)	Select the Action button, then Delete.
+2)	To temporarily disable the user, go to VM/Users/Users tab.
+a)	Edit the user
+b)	Select Options
+c)	Under VeriSign Identity Protection (VIP), click on the Deactivate Credentials button.
+User Account Review
+1)	Go to VM/Users/Users tab.
+2)	Select the Filters button, then Hierarchy Chart.
+3)	Verify the Hierarchy Chart.
+4)	Print the Hierarchy Chart to PDF.
+5)	Verify the list of users and their access in QualysGuard and make any changes or corrections as required.
+6)	Reprint the report and retain as your records.
+ 
+Qualys Severity Levels
+The service assigns every vulnerability in the Knowledgebase a severity level, which is determined by the security risk associated with its exploitation. The possible consequences related to each vulnerability, potential vulnerability and information gathered severity level are described below. The guidance below is followed for all vulnerabilities. In addition to this broad guidance the service also takes into consideration factors like complexity of the exploit and likelihood of the exploit to work under normal conditions. Network location and privileges needed by an attacker to execute a successful attack are considered. Prevalence of the affected software and existence of known attacks, worm or malware also plays a role.
+Managers have the option to edit vulnerabilities in the KnowledgeBase and change the severity level (except for web application vulnerabilities).
+Vulnerabilities
+Vulnerabilities are design flaws or mis-configurations that make your network (or a host on your network) susceptible to malicious attacks from local or remote users. Vulnerabilities can exist in several areas of your network, such as in your firewalls, FTP servers, Web servers, operating systems or CGI bins. Depending on the level of the security risk, the successful exploitation of a vulnerability can vary from the disclosure of information about the host to a complete compromise of the host.
+Severity	Level	Description
+ 	Minimal	Intruders can collect information about the host (open ports, services, etc.) and may be able to use this information to find other vulnerabilities.
+ 	Medium	Intruders may be able to collect sensitive information from the host, such as the precise version of software installed. With this information, intruders can easily exploit known vulnerabilities specific to software versions.
+ 	Serious	Intruders may be able to gain access to specific information stored on the host, including security settings. This could result in potential misuse of the host by intruders. For example, vulnerabilities at this level may include partial disclosure of file contents, access to certain files on the host, directory browsing, disclosure of filtering rules and security mechanisms, denial of service attacks, and unauthorized use of services, such as mail-relaying.
+ 	Critical	Intruders can possibly gain control of the host, or there may be potential leakage of highly sensitive information. For example, vulnerabilities at this level may include full read access to files, potential backdoors, or a listing of all the users on the host.
+ 	Urgent	Intruders can easily gain control of the host, which can lead to the compromise of your entire network security. For example, vulnerabilities at this level may include full read and write access to files, remote execution of commands, and the presence of backdoors.
+ 
+Potential Vulnerabilities
+Potential Vulnerabilities include vulnerabilities that cannot be fully verified. In these cases, at least one necessary condition for the vulnerability is detected. It's recommended that you investigate these vulnerabilities further. The service can verify the existence of some potential vulnerabilities when authenticated trusted scanning is enabled. Read Getting Started with Trusted Scanning to learn more. 
+Note: When viewing scan results and some other reports in XML and CSV formats, the vulnerability type "potential" is identified as "practice". In this case the term "practice" (as a CSV column title or an XML element name) is identical in meaning to the vulnerability type "potential".
+Severity	Level	Description
+ 	Minimal	If this vulnerability exists on your system, intruders can collect information about the host (open ports, services, etc.) and may be able to use this information to find other vulnerabilities.
+ 	Medium	If this vulnerability exists on your system, intruders may be able to collect sensitive information from the host, such as the precise version of software installed. With this information, intruders can easily exploit known vulnerabilities specific to software versions.
+ 	Serious	If this vulnerability exists on your system, intruders may be able to gain access to specific information stored on the host, including security settings. This could result in potential misuse of the host by intruders. For example, vulnerabilities at this level may include partial disclosure of file contents, access to certain files on the host, directory browsing, disclosure of filtering rules and security mechanisms, denial of service attacks, and unauthorized use of services, such as mail-relaying.
+ 	Critical	If this vulnerability exists on your system, intruders can possibly gain control of the host, or there may be potential leakage of highly sensitive information. For example, vulnerabilities at this level may include full read access to files, potential backdoors, or a listing of all the users on the host.
+ 	Urgent	If this vulnerability exists on your system, intruders can easily gain control of the host, which can lead to the compromise of your entire network security. For example, vulnerabilities at this level may include full read and write access to files, remote execution of commands, and the presence of backdoors.
+ 
+Information Gathered
+Information Gathered includes visible information about the network related to the host, such as traceroute information, Internet Service Provider (ISP), or a list of reachable hosts. Information Gathered severity levels also include Network Mapping data, such as detected firewalls, SMTP banners, or a list of open TCP services.
+Severity	Level	Description
+ 	Minimal	Intruders may be able to retrieve sensitive information related to the host, such as open UDP and TCP services lists, and detection of firewalls.
+ 	Medium	Intruders may be able to determine the operating system running on the host, and view banner versions.
+ 	Serious	Intruders may be able to detect highly sensitive data, such as xxxx system user lists.
+ 
+Half Red / Half Yellow
+Vulnerabilities assigned a half red / half yellow severity level (such as  ) in the KnowledgeBase represent vulnerabilities that may be confirmed in some cases and not confirmed in other cases because of various factors affecting scan results. If the vulnerability is confirmed during a scan, it appears as a red vulnerability in the results. If it cannot be confirmed, it appears as a yellow potential vulnerability in the results. For example, without Windows Authentication enabled, there may not be enough information gathered to accurately identify the operating system on the target host, or detect installed fixes and patches. Thus, related vulnerabilities will go unconfirmed and appear as potential vulnerabilities in the results. When Windows Authentication is enabled, subsequent scans may result in more accurate detection and the same issues may be confirmed.
+Additionally, scans may not result in enough information for confirming certain vulnerabilities due to the scan options applied to the scan, and the services running at the time of the scan.
+ 
+xxxx VM & Qualys Support
+For support on xxxx VM or QualysGuard, the SFC should follow the communication flow below.
+For general questions and non-emergency issues:
+1)	Email the question or issue to:
+a)	Regional ISO
+b)	xxxx_xxxx_Support@xxxx.com.
+2)	The Regional ISO will attempt to address and resolve the issue.
+3)	If the Regional ISO is unable to address or resolve the matter, he will request assistance from the xxxx VM Leads or contact Qualys directly.
+4)	All support emails should include the xxxx_xxxx_Vulnerability_Management@xxxx.com on the distribution.
+For emergency situations where scanning is impacting the network operations:
+1)	The SFC IT/IS Manger should stop all scan jobs that are running.
+2)	Contact the Regional ISO by phone or email with cc to xxxx_xxxx_Vulnerability_Management@xxxx.com.
+3)	If it is during non-business hours:
+a)	If the situation can wait until normal business hours, then wait for a response from the Regional ISO or xxxx xxxx VM leads.
+b)	If the situation cannot wait until normal business hours, then the SFC IT/IS Manager should contact the QualysGuard support line directly.
+Outages
+Generally scheduled scans and reports tend not to be affected by platform outages.  In the case of most outages of the QualysGuard SOC, scans may be delayed but rarely cause them to fail altogether.  If the platform is unavailable, the scanners will continue any scans they are working on and cache their results until the platform comes back.  
+If the platform goes down when a scan is scheduled to start, that scan will still start if it is within the permitted time window for the scan at the time the platform comes back up.
+During outages, there are a couple of options for Qualys to notify users. If the customer base is affected, Qualys will email out to the listed Manager accounts in the subscription to inform them of the problem.  Qualys also has a status page that will be updated during broad outages to the shared platform at: https://www.qualys.com/platform-status/.
+
+Notifications
+All QualysGuard Mangers and Unit Managers should sign up for email or RSS notifications on the Qualys Community website.  There are separate notification lists for US, EU, and API services:
+https://community.qualys.com/community/notifications-us
+For a comprehensive list of all the available RSS feed options, go to:
+https://community.qualys.com/community/feeds?community=2030
+ 
+Disaster Recovery (DR) or Appliance Failure
+Each SFC should define and establish the DR plan for the QualysGuard appliances within the framework of the SFCs overall DR plan.  Although the QualysGuard scanning is critical from an Information Security perspective, it would not be considered as critical core business system.  The generally recommended recovery time objective (RTO) and recovery point objective (RPO) for QualysGuard are:
+•	RTO: SFCs discretion
+•	RPO: Since the is no data stored on the appliance and all data is stored in the QualysGuard SOC cloud, the recovery point objective (RPO) is at the point of the last completed scan prior to the outage.
+Recovery Procedures
+In event of a disaster or appliance failure at the SFC, the following steps would be followed:
+1.	Contact the xxxx VM Leads and/or your xxxx Regional ISO and coordinate the overall recovery.
+2.	Contact Qualys to order a replace scanner.
+a.	If a virtual scanner was implemented, no need to order another appliance as it can be re-downloaded from the online system.
+b.	If a physical scanner was implemented:
+i.	Request a replacement physical appliance.  This may take a day to order and ship the appliance from Qualys, and if outside the United States, the additional days to get it through customs.
+ii.	Another option is to request a temporary virtual scanner.  This can be quickly provisioned and allocated online by Qualys and added to the xxxx subscription.  The download can be made available within 24 hours or less.
+3.	Reinstall and connect to the QualysGuard SOC.
+a.	If possible, coordinate with the Qualys support group to walk through the installation together.
+b.	Follow the installation procedures for either the virtual or physical scanner appliance.
+c.	The replacement scanner will need to be activated with a personalization code from the online system.
+4.	Use the "Replace Scanner Appliance" function to transfer the settings from the old scanner to the replacement scanner.  Refer to the “Replace Scanner Appliance” online help for detailed procedures.
+5.	At this point, the replacement scanner should be up and operable.
+ 
+Vulnerability Management and Root Cause Analysis
+Friday, June 07, 2013
+Contributed By: Gary McCully (http://www.infosecisland.com/blogview/23195-Vulnerability-Management-and-Root-Cause-Analysis.html) 
+ Current State (Security Analyst or Firefighter)
+Many organizations are caught in a vicious cycle when it comes to information security, and it probably feels like there is no hope of escape.
+1.They run a vulnerability scan on their network, which identifies many missing patches and vulnerabilities related to a lack of server hardening.
+2.The organization goes into firefighting mode in which they run around trying to fix these vulnerabilities.
+3.The person in charge of running the vulnerability scans sends out a bunch of emails requesting various people in various departments to fix the vulnerabilities on systems and applications they administer.
+4.Some of these people respond by remediating these vulnerabilities, but others are not so responsive and require continuous follow-up.
+5.Finally, after many meetings, arguments, Google searches and training sessions, the vulnerabilities from the scan report have been addressed. By this time, it is time to run another scan at which time the process starts all over again. The person in charge of running the scans sighs heavily and thinks to themselves…”there has got to be a better way.”
+Desired State (Love is an irresistible desire to be irresistibly desired)
+Ideally, vulnerability scans should identify fewer vulnerabilities over time until the organization comes to the point where there are only a few left to discover. This occurs when the organization takes the vulnerabilities that the scanner identifies and addresses the vulnerability at the root of the problem. When a scanner identifies a missing patch or a vulnerability related to a misconfiguration it is important to remember that the real problem goes much deeper. Most of the time the problem can be traced back to the program level, such as the change management program, patch management program, system hardening processes, security awareness training, or password management program. By making changes at the program level most organizations can greatly reduce the likelihood of similar vulnerabilities appearing in the future, and thus, greatly increase their security posture.
+ 
+How to Get There (If you don’t know where you’re going, any road will get you there)
+By performing root cause analysis on each vulnerability the scanner identifies, an organization can effectively find and address the issue at the root of the problem. Many times the root cause of one vulnerability is the same cause of others within the environment. One of the easiest ways for performing root cause analysis is to ask the five whys. The five whys involve asking the question why five times in order to get to the underlying cause of a problem.
+Here’s an example showing how the Five Whys might play out.
+A scan was run on an organization’s network and it identifies that a new MS-SQL server had a Blank System Administrator (SA) password configured on it. This is a very severe vulnerability which has allowed me to gain administrator access to many servers during Internal Attack and Penetration assessments throughout the years.
+1.Why does this server have a blank SA password? – No one configured a password on the SA account.
+ 2.Why did no one configure a password on the SA account? – This was a new server build and the person who configured the server did not know that they should place a password on the SA account.
+ 3.Why did the person not know that they should place a password on the SA account? – This person did not know that this was an important task when configuring a new server.
+ 4.Why did the person who configured the server not know that this was an important task? – Because they were never trained in the fact that it is important to harden a system before placing it in production.
+ 5.Why was this person never trained on system hardening? – Because system hardening is not part of the process of new server builds, so this sort of training is not applicable to the employee’s role.
+Strategic Change (The supreme art of war is to subdue the enemy without fighting)
+ In our example we can see how what appeared to be an oversight or negligence on behalf of the person who performed the server build was actually a problem in the server build process. By requiring system hardening of servers before they are placed in production, the organization can help reduce the chances of this vulnerability (as well as similar vulnerabilities) appearing in the organization’s network in the future. Thus, strategic changes will help increase an organization’s security posture over time by building and addressing program level gaps, as opposed to tactical fixes that only benefit the organization in the short term by addressing the immediate vulnerabilities. Additionally, the people involved in running scans and remediating vulnerabilities will have more time to spend on productive tasks. 
+In the end, vulnerability scanning should essentially be a process that identifies weaknesses in existing security processes rather than simply identifying vulnerabilities in the existing environment.
+ 
+QualysGuard Best Practices 
+
